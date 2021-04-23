@@ -43,7 +43,7 @@
             v-for="state in states"
             :key="state"
             v-text="$t(`proposals.states.${state}`)"
-            :to="`/${key}/${state}`"
+            :to="`/${state}`"
             :class="tab === state && 'text-white'"
             class="mr-3 text-gray tab"
           />
@@ -86,7 +86,7 @@ export default {
   },
   computed: {
     key() {
-      return this.domain || this.$route.params.key;
+      return this.domain || 'pippi.eth';
     },
     space() {
       return this.app.spaces[this.key];

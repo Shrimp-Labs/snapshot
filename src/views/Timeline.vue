@@ -20,7 +20,7 @@
     <template #content-right>
       <div class="px-4 px-md-0 mb-3 d-flex">
         <div class="flex-auto">
-          <router-link :to="{ name: 'home' }" class="text-gray">
+          <router-link :to="{ name: 'proposals' }" class="text-gray">
             <Icon name="back" size="22" class="v-align-middle" />
             {{ $t('backToHome') }}
           </router-link>
@@ -47,7 +47,7 @@
       </div>
       <Block v-if="spaces.length < 1 && !scope" class="text-center">
         <div class="mb-3">{{ $t('noFavorites') }}</div>
-        <router-link :to="{ name: 'home' }">
+        <router-link :to="{ name: 'proposals' }">
           <UiButton>{{ $t('addFavorites') }}</UiButton>
         </router-link>
       </Block>

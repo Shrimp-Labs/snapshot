@@ -2,7 +2,7 @@
   <Layout>
     <template #content-left>
       <div class="px-4 px-md-0 mb-3">
-        <router-link :to="{ name: 'home' }" class="text-gray">
+        <router-link :to="{ name: 'proposals' }" class="text-gray">
           <Icon name="back" size="22" class="v-align-middle" />
           {{ $t('backToHome') }}
         </router-link>
@@ -326,7 +326,7 @@ const gateway = process.env.VUE_APP_IPFS_GATEWAY || gateways[0];
 export default {
   data() {
     return {
-      key: this.$route.params.key,
+      key: 'pippi.eth',
       from: this.$route.params.from,
       currentSettings: {},
       currentContenthash: '',

@@ -29,12 +29,11 @@ export async function getProposal(space, id) {
   }
 }
 
-export async function getResults(space, proposal, votes, blockNumber) {
+export async function getResults(space, proposal, votes) {
   try {
     const provider = getProvider(space.network);
     const voters = Object.keys(votes);
-    const { snapshot } = proposal.msg.payload;
-    const blockTag = snapshot > blockNumber ? 'latest' : parseInt(snapshot);
+    const blockTag = 'latest';
 
     /* Get scores */
     console.time('getProposal.scores');
@@ -104,10 +103,9 @@ export async function getResults(space, proposal, votes, blockNumber) {
   }
 }
 
-export async function getPower(space, address, snapshot) {
+export async function getPower(space, address) {
   try {
-    const blockNumber = await getBlockNumber(getProvider(space.network));
-    const blockTag = snapshot > blockNumber ? 'latest' : parseInt(snapshot);
+    const blockTag = 'latest';
     let scores: any = await getScores(
       space.key,
       space.strategies,

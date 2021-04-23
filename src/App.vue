@@ -25,7 +25,7 @@ export default {
   computed: {
     space() {
       try {
-        const key = this.domain || this.$route.params.key;
+        const key = 'pippi.eth';
         return this.app.spaces[key];
       } catch (e) {
         return {};

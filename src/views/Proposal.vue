@@ -2,10 +2,7 @@
   <Layout>
     <template #content-left>
       <div class="px-4 px-md-0 mb-3">
-        <router-link
-          :to="{ name: domain ? 'home' : 'proposals' }"
-          class="text-gray"
-        >
+        <router-link :to="{ name: 'proposals' }" class="text-gray">
           <Icon name="back" size="22" class="v-align-middle" />
           {{ space.name }}
         </router-link>
@@ -225,7 +222,7 @@ import { getProposal, getResults, getPower } from '@/helpers/snapshot';
 export default {
   data() {
     return {
-      key: this.$route.params.key,
+      key: 'pippi.eth',
       id: this.$route.params.id,
       loading: false,
       loaded: false,
